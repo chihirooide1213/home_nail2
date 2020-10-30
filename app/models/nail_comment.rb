@@ -1,0 +1,2 @@
+class NailComment < ApplicationRecord
+end
