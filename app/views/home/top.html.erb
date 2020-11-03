@@ -1,6 +1,12 @@
 <h1>Home Nail</h1>
 <div class="review">
-	<div class="monthly"></div>
-	<div class="weekly"></div>
-	<div class="daily"></div>
+	<div class="monthly">
+		<% render 'nail_comments/monthly_ranking', nail_ranking: @monthly_ranking %>
+	</div>
+	<div class="weekly">
+		<% render 'nail_comments/monthly_ranking', nail_ranking: @weekly_ranking %>
+	</div>
+	<div class="daily">
+		<% render 'nail_comments/monthly_ranking', nail_ranking: @daily_ranking %>
+	</div>
 </div>
