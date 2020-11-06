@@ -2,7 +2,7 @@ class NailCommentsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_comment, only: [:show, :edit, :update, :destroy]
   def index
-  	@nail_commnets = Nail_comennt.all
+  	@nail_comments = NailComment.all
   end
 
   def show

@@ -21,12 +21,6 @@
         <%= link_to "Topページ", root_path %>
         <%= link_to "登録はこちらから", new_user_registration_path %>
       <% end %>
-      <div class="search">
-        <%= form_with url:root_path, method: :get, local: true do |f| %>
-          <%= f.text_field :name, class: "search-form" %>
-          <%= f.submit :検索する %>
-        <% end %>
-      </div>
     </div>
     </header>
     <%= yield %>
