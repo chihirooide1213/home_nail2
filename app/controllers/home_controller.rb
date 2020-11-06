@@ -31,5 +31,6 @@ class HomeController < ApplicationController
     else
       @search_nails = Nail.none
     end
+
   end
 end
