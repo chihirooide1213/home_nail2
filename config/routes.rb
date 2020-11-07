@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: "users/sessions",
+  }
 
 resources :users do
 	resources :relationships
@@ -7,7 +10,7 @@ resources :users do
 
   resources :nails do
   	resource :favorites, only:[:create, :destroy]
-  	resources :nail_comments,only:[:index,:show,:edit]
+  	resources :nail_comments,only:[:index,:show,:edit,:new,:destroy,:create]
   end
 
   root 'home#top'
