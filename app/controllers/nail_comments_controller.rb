@@ -1,6 +1,16 @@
 class NailCommentsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_comment, only: [:show, :edit, :update, :destroy]
+
+  def create
+    @nail_comment = NaiLComment.new
+  end
+
+
+  def new
+    @nail_comment = NaiLComment.new(nail_comment_params)
+  end
+
   def index
   	@nail_comments = NailComment.all
   end
