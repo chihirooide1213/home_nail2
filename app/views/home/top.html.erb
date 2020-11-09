@@ -1,23 +1,25 @@
-<h1>Home Nail</h1>
+<div class="container">
+	<h1>Home Nail</h1>
 
-<div class="search">
-        <%= form_with url:root_path, method: :get, local: true do |f| %>
-          <%= f.text_field :name, class: "search-form" %>
-          <%= f.submit :検索する %>
-        <% end %>
-        <% @search_nails.each do |search_nail| %>
-        <%= search_nail.name %>
-        <% end %>
-</div>
+	<div class="search">
+	        <%= form_with url:root_path, method: :get, local: true do |f| %>
+	          <%= f.text_field :name, class: "search-form" %>
+	          <%= f.submit :検索する %>
+	        <% end %>
+	        <% @search_nails.each do |search_nail| %>
+	        <%= search_nail.name %>
+	        <% end %>
+	</div>
 
-<div class="review">
-	<div class="monthly">
-		<% render 'nail_comments/monthly_ranking', nail_ranking: @monthly_ranking %>
-	</div>
-	<div class="weekly">
-		<% render 'nail_comments/monthly_ranking', nail_ranking: @weekly_ranking %>
-	</div>
-	<div class="daily">
-		<% render 'nail_comments/monthly_ranking', nail_ranking: @daily_ranking %>
+	<div class="review">
+		<div class="monthly">
+			<% render 'nail_comments/monthly_ranking', nail_ranking: @monthly_ranking %>
+		</div>
+		<div class="weekly">
+			<% render 'nail_comments/monthly_ranking', nail_ranking: @weekly_ranking %>
+		</div>
+		<div class="daily">
+			<% render 'nail_comments/monthly_ranking', nail_ranking: @daily_ranking %>
+		</div>
 	</div>
 </div>
