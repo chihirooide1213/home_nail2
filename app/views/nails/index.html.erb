@@ -1,8 +1,11 @@
-<h1>Nails#index</h1>
-<% @nails.each do |nail| %>
-	<%= nail.name %>
-	<%= nail.brand %>
-	<%= nail.price %>
-	<%= nail.introduction %>
-<% end %>
-<p>Find me in app/views/nails/index.html.erb</p>
+<div class="container">
+	<h1>ネイル一覧</h1>
+	<% @nails.each do |nail| %>
+		<%= nail.name %>
+		<%= nail.brand %>
+		<%= nail.price %>
+		<%= nail.introduction %>
+	<% end %>
+
+	<%= link_to '新規投稿', new_nail_path %>
+</div>
