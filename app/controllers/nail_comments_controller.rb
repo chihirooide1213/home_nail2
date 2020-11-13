@@ -1,14 +1,14 @@
 class NailCommentsController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_comment, only: [:show, :edit, :update, :destroy]
+	before_action :set_nail, only: [:show, :edit, :update, :destroy]
 
   def create
-    @nail_comment = NaiLComment.new
+    @nail_comment = NailComment.new(nail_comment_params)
   end
 
 
   def new
-    @nail_comment = NaiLComment.new(nail_comment_params)
+    @nail_comment = NailComment.new
   end
 
   def index
@@ -26,10 +26,10 @@ class NailCommentsController < ApplicationController
 
   private
   def nail_comment_params
-  	params.require(:nail_comment).permit(:user_id, :nail_id, :rate, :content, :title)
+  	params.permit(:user_id, :nail_id, :rate, :content, :title)
   end
 
-  def set_comment
+  def set_nail
   	@nail = Nail.find(params[:id])
   end
 end
