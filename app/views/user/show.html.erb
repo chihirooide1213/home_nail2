@@ -1,0 +1,12 @@
+<div class="container">
+	<h2>マイページ</h2>
+	<div class="post">
+		<% @nails.each do |nail| %>
+		 <%= nail.name %>
+		 <%= attachment_image_tag nail,:image, :fill, 50, 50 ,format: "jpeg" %>
+		 <%= nail.introduction %>
+		<% end %>
+	</div>
+
+	<%= link_to "新規投稿", new_nail_path %>
+</div>

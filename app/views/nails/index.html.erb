@@ -1,14 +1,17 @@
 <div class="container">
 	<h1>ネイル一覧</h1>
 	<% @nails.each do |nail| %>
-          <%= nail.name %>
-          <%= attachment_image_tag nail,:image, :fill, 50, 50 ,format: "jpeg" %>
-          <td><%= nail.introduction %></td>
-          <td><%= nail.price %></td>
-          <td><%= link_to 'Show', nail %></td>
-          <td><%= link_to 'Edit', edit_nail_path(nail) %></td>
-          <td><%= link_to 'Destroy', nail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<div class="nail">
+	        <%= link_to nail_path(nail.id) do %>
+	         <%= attachment_image_tag nail,:image, :fill, 50, 50 ,format: "jpeg" %>
+	         <%= nail.name %>
+	        <% end %>
+	          <%= nail.introduction %>
+	          <%= nail.price %>
+		</div>
+        <%= link_to 'Show', nail %>
+	    <%= link_to 'Edit', edit_nail_path(nail) %>
+	    <%= link_to 'Destroy', nail, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'New', new_nail_path %>
 	<% end %>
-
-	<%= link_to '新規投稿', new_nail_path %>
 </div>

@@ -1,5 +1,6 @@
 class NailsController < ApplicationController
 	before_action :authenticate_user!
+	before_action :set_nail, only: [:show, :edit, :update, :destroy]
 
   def new
 	@nail = Nail.new
@@ -7,7 +8,7 @@ class NailsController < ApplicationController
 
   def create
   	@nail = Nail.new(nail_params)
-  	@nail.save
+  	@nail.save!
   	redirect_to nails_path
   end
 
@@ -23,7 +24,11 @@ class NailsController < ApplicationController
 
   private
 	def nail_params
-      params.require(:nail).permit(:relationship_id, :user_id, :name, :image, :brand, :introduction, :price)
+      params.require(:nail).permit(:relationship_id, :name, :image, :brand, :introduction, :price)
+	end
+
+	def set_nail
+		@nail = Nail.find(params[:id])
 	end
 
 end
