@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
   }
 
-resources :users do
+resources :user do
 	resources :relationships
   end
 
