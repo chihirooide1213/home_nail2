@@ -4,6 +4,8 @@ class NailCommentsController < ApplicationController
 
   def create
     @nail_comment = NailComment.new(nail_comment_params)
+    @nail_comment.save
+    redirect_to nail_nail_comments_path
   end
 
 
@@ -26,7 +28,7 @@ class NailCommentsController < ApplicationController
 
   private
   def nail_comment_params
-  	params.permit(:user_id, :nail_id, :rate, :content, :title)
+  	params.require(:nail_comment).permit(:user_id, :nail_id, :rate, :content, :title)
   end
 
   def set_nail

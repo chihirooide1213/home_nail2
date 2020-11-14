@@ -24,7 +24,7 @@ class NailsController < ApplicationController
 
   private
 	def nail_params
-      params.require(:nail).permit(:relationship_id, :name, :image, :brand, :introduction, :price)
+      params.require(:nail).permit(:relationship_id, :name, :image, :brand, :introduction, :price, :user_id)
 	end
 
 	def set_nail

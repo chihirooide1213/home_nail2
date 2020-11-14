@@ -1,19 +1,7 @@
 <div class="container">
 <h1>New Comment</h1>
 
-<%= form_with model: [@nail_comment] , url: nail_nail_comments_path, method: :post, local: true do |form| %>
-
-  <% if @nail_comment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(nail_comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
-
-      <ul>
-      <% @nail_comment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_with model: @nail_comment, url: nail_nail_comments_path, method: :post, local: true do |form| %>
 
   <!--nailコードの送信-->
   <%= form.hidden_field :nail_id %>

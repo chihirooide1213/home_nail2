@@ -4,8 +4,9 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
   }
 
-resources :user do
-	resources :relationships
+namespace :users do
+    resources :user,only: [:show, :edit]
+    resources :relationships
   end
 
   resources :nails do
