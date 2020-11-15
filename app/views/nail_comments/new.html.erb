@@ -1,7 +1,7 @@
 <div class="container">
 <h1>New Comment</h1>
 
-<%= form_with model: @nail_comment, url: nail_nail_comments_path, method: :post, local: true do |form| %>
+<%= form_with model: [@nail_comment,@nail] , url: nail_nail_comments_path, method: :post, local: true do |form| %>
 
   <!--nailコードの送信-->
   <%= form.hidden_field :nail_id %>

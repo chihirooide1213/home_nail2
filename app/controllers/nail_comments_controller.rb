@@ -4,13 +4,16 @@ class NailCommentsController < ApplicationController
 
   def create
     @nail_comment = NailComment.new(nail_comment_params)
-    @nail_comment.save
+    @nail_comment.save!
     redirect_to nail_nail_comments_path
   end
 
 
   def new
     @nail_comment = NailComment.new
+    @nail = Nail.find(params[:nail_id])
+    @nail_comment.user_id = current_user.id
+    @nail_comment.nail_id = @nail.id
   end
 
   def index
@@ -28,7 +31,7 @@ class NailCommentsController < ApplicationController
 
   private
   def nail_comment_params
-  	params.require(:nail_comment).permit(:user_id, :nail_id, :rate, :content, :title)
+  	params.permit(:user_id, :nail_id, :rate, :content, :title)
   end
 
   def set_nail
