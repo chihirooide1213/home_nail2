@@ -1,15 +1,17 @@
 class Users::UserController < ApplicationController
+
   def show
   	@user = current_user
-	@nails = @user.nails.all
+	@nails = Nail.where(user_id: @user.id)
   end
 
   def edit
+  	@nail = Nail.find(paramas[:id])
   end
 
   private
 	def nail_params
-		pramams.require(:nail).permit(:name, :image, :brand, :introduction, :price)
+		params.require(:nail).permit(:name, :image, :brand, :introduction, :price, :user_id)
 	end
 
 	def user_params
