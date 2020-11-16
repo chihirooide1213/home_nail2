@@ -4,7 +4,7 @@
   <% if @nail_comments.present? %>
     <% @nail_comments.each do |nail_comment| %>
         <div class="review col-md-4 mb-4">
-            <div class="posts-content">
+            <div class="nail_comment">
               <p>投稿日時：<%= simple_time(nail_comment.created_at) %></p>
               <h4 class="mb-3">評価：<%= nail_comment.rate %>点 | <%= nail_comment.title %></h4>
               <div><%= attachment_image_tag nail_comment.nail,:image,:fill, 100, 100, format: "jpeg" %></div>
