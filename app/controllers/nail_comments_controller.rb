@@ -17,7 +17,7 @@ class NailCommentsController < ApplicationController
   end
 
   def index
-  	@nail_comments = NailComment.all
+  	@nail_comments = NailComment.order(created_at:"DESC")
   end
 
   def show
