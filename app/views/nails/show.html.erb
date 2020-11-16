@@ -1,2 +1,7 @@
-<h1>Nails#show</h1>
-<p>Find me in app/views/nails/show.html.erb</p>
+
+<div class="container">
+	<%= @nail.name %>
+	<%= attachment_image_tag @nail,:image, :fill, 50, 50 ,format: "jpeg" %>
+	<%= @nail.price %>
+	<%= @nail.introduction %>
+</div>

@@ -7,9 +7,9 @@
   <%= form.hidden_field :nail_id %>
   <%= form.hidden_field :nail_comment %>
   <div class="form-group row">
-        <%= form.label :nail_name, '商品名 ', class:'col-md-3 col-form-label' %>
+        <%= form.label :name, '商品名 ', class:'col-md-3 col-form-label' %>
         <div class="col-md-9">
-          <%= form.text_field :nail_name, class: "form-control" %>
+          <%= form.text_field :name, class: "form-control" %>
         </div>
       </div>
 
@@ -24,7 +24,7 @@
       <!-- 評価 -->
       <div class="form-group row" id="star">
         <%= form.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
-        <%= form.hidden_field :rate, id: :review_star %>
+        <%= form.hidden_field :rate, nail_comment_id: :review_star %>
       </div>
 
       <!-- 評価javascript -->
