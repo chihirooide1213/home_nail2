@@ -4,4 +4,6 @@
 	<%= attachment_image_tag @nail,:image, :fill, 50, 50 ,format: "jpeg" %>
 	<%= @nail.price %>
 	<%= @nail.introduction %>
+
+	<%= link_to '口コミを書く', new_nail_nail_comment_path(@nail) %>
 </div>

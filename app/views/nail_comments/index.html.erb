@@ -34,8 +34,8 @@
           </div>
           <div class="col-md-12 edit-button">
             <% if current_user == nail_comment.user %>
-              <%= link_to '口コミを編集', edit_nail_nail_comment_path(nail_comment), method: :get, class:"btn btn-primary" %>
-              <%= link_to '口コミを削除', nail_nail_comment_path(nail_comment), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class:"btn btn-primary" %>
+              <%= link_to '口コミを編集', edit_nail_nail_comment_path(nail_comment, @nail), method: :get, class:"btn btn-primary" %>
+              <%= link_to '口コミを削除', nail_nail_comment_path(nail_comment, @nail), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class:"btn btn-primary" %>
             <% end %>
           </div>
       </div>

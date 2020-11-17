@@ -1,12 +1,12 @@
 class Users::UserController < ApplicationController
 
   def show
-  	@user = current_user
-	@nails = Nail.where(user_id: @user.id)
+  	@user = User.find(params[:id])
+	  @nails = Nail.where(user_id: @user.id)
   end
 
   def edit
-  	@nail = Nail.find(paramas[:id])
+  	@nail = Nail.find(params[:id])
   end
 
   private
@@ -15,6 +15,6 @@ class Users::UserController < ApplicationController
 	end
 
 	def user_params
-  		params.require(:user).permit(:last_name, :first_name,:last_name_kana, :first_name_kana, :address, :telephone_number, :email)
+  	params.require(:user).permit(:last_name, :first_name,:last_name_kana, :first_name_kana, :address, :telephone_number, :email)
   	end
 end
