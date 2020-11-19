@@ -1,0 +1,19 @@
+<div class="container">
+<%= form_with model: @nail, url: edit_nail_path(@nail) ,method: :put,local: true do |f| %>
+
+	<%= f.label :商品名 %>
+	<%= f.text_field :name %>
+
+	<%= f.label :商品画像 %>
+	<%= f.attachment_field :image %>
+
+	<%= f.label :価格 %>
+	<%= f.text_field :price %>
+
+	<%= f.label :商品説明 %>
+	<%= f.text_area :introduction %>
+
+
+	<%= f.submit '編集' %>
+<% end %>
+</div>
