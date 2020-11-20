@@ -22,6 +22,11 @@ class NailsController < ApplicationController
   def edit
   end
 
+  def update
+    @nail.update(nail_params)
+    redirect_to nail_path(@nail)
+  end
+
   private
 	def nail_params
       params.require(:nail).permit(:relationship_id, :name, :image, :brand, :introduction, :price, :user_id).merge(user_id: current_user.try(:id))
