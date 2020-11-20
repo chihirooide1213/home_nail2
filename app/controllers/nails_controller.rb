@@ -13,7 +13,7 @@ class NailsController < ApplicationController
   end
 
   def index
-  	@nails = Nail.all
+  	@nails = Nail.all.order(created_at: :desc).page(params[:page]).per(18)
   end
 
   def show
