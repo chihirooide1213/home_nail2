@@ -5,5 +5,7 @@
 	<%= @nail.price %>
 	<%= @nail.introduction %>
 
+<% if @nail.user = current_user %>
 	<%= link_to '口コミを書く', new_nail_nail_comment_path(@nail) %>
+	<% end %>
 </div>

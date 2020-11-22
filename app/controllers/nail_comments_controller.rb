@@ -1,6 +1,7 @@
 class NailCommentsController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_nail, only: [:show, :edit, :update, :destroy]
+	before_action :set_nail, only: [:show, :edit, :update, :destroy, :update]
+  before_action :set_nailcomment, only: [:edit,:update, :show]
 
   def create
     @nail_comment = NailComment.new(nail_comment_params)
@@ -24,7 +25,6 @@ class NailCommentsController < ApplicationController
   end
 
   def show
-    @nail_comment = NailComment.find(params[:id])
   end
 
   def edit
@@ -33,12 +33,21 @@ class NailCommentsController < ApplicationController
   def destroy
   end
 
+  def update
+    @nail_comment.update(nail_comment_params)
+    redirect_to nail_nail_comments_path
+  end
+
   private
   def nail_comment_params
-  	params.permit(:user_id, :nail_id, :rate, :content, :title)
+  	params.permit(:nail_id, :rate, :content, :title).merge(user_id: current_user.try(:id))
   end
 
   def set_nail
   	@nail = Nail.find(params[:id])
+  end
+
+  def set_nailcomment
+    @nail_comment =NailComment.find(params[:nail_id])
   end
 end

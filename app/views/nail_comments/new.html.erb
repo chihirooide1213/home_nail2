@@ -4,8 +4,7 @@
 <%= form_with model: [@nail_comment,@nail] , url: nail_nail_comments_path, method: :post, local: true do |form| %>
 
   <!--nailコードの送信-->
-  <%= form.hidden_field :nail_id %>
-  <%= form.hidden_field :nail_comment %>
+  <%= form.hidden_field :nail_id,{ value: @nail.id} %>
   <div class="form-group row">
         <%= form.label :name, '商品名 ', class:'col-md-3 col-form-label' %>
         <div class="col-md-9">
@@ -24,7 +23,7 @@
       <!-- 評価 -->
       <div class="form-group row" id="star">
         <%= form.label :rate,'評価 ', class:'col-md-3 col-form-label' %>
-        <%= form.hidden_field :rate, nail_comment_id: :review_star %>
+        <%= form.hidden_field :rate, id: :review_star %>
       </div>
 
       <!-- 評価javascript -->
@@ -34,7 +33,7 @@
         starOff:  '<%= asset_path('star-off.png') %>',
         starOn : '<%= asset_path('star-on.png') %>',
         starHalf: '<%= asset_path('star-half.png') %>',
-        scoreName: 'post[rate]',
+        scoreName: 'nail_comment[rate]',
         half: true,
       });
       </script>
