@@ -6,8 +6,23 @@
 	          <%= f.text_field :name, class: "search-form" %>
 	          <%= f.submit :検索する %>
 	        <% end %>
+
+
 	        <% @search_nails.each do |search_nail| %>
-	        <%= search_nail.name %>
+	        <table>
+	        	<tr>
+	        		<thead>
+		        		<th>商品名</th>
+		        		<th>商品画像</th>
+		        		<th>商品価格</th>
+	        	    </thead>
+	        		<tbody>
+				        <td><%= search_nail.name %></td>
+				        <td><%= search_nail.price %></td>
+				        <td><%= attachment_image_tag search_nail,:image, :fill, 50, 50 ,format: "jpeg" %></td>
+	    	        </tbody>
+	    	    </tr>
+	        </table>
 	        <% end %>
 	</div>
 

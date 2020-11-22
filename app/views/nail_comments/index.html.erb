@@ -10,9 +10,9 @@
               <div><%= attachment_image_tag nail_comment.nail,:image,:fill, 100, 100, format: "jpeg" %></div>
 
               <!--星評価-->
-             <div id="star-rate-<%= nail_comment.id %>"></div>
+             <div id="star-rate-<%= nail_comment.nail.id %>"></div>
               <script>
-              $('#star-rate-<%= nail_comment.id %>').raty({
+              $('#star-rate-<%= nail_comment.nail.id %>').raty({
                 size: 36,
                 starOff:  '<%= asset_path('star-off.png') %>',
                 starOn : '<%= asset_path('star-on.png') %>',
@@ -27,7 +27,7 @@
               <p><%= nail_comment.content %></p>
             </div>
           <div class="col-md-4">
-            <%= link_to nail_comment.nail.name, nail_path(nail_comment) %>
+            <%= link_to nail_comment.nail.name, nail_path(nail_comment.nail_id) %>
               <div class="posts-item">
                 <p><%=  nail_comment.title %></p>
               </div>

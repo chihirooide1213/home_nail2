@@ -11,7 +11,7 @@ namespace :users do
 
   resources :nails do
   	resource :favorites, only:[:create, :destroy]
-  	resources :nail_comments,only:[:index,:show,:edit,:new,:destroy,:create]
+  	resources :nail_comments,only:[:index,:show,:edit,:new,:destroy,:create, :update]
   end
 
   root 'home#top'
