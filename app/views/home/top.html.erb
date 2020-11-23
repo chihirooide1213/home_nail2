@@ -7,9 +7,8 @@
 	          <%= f.submit :検索する %>
 	        <% end %>
 
-
-	        <% @search_nails.each do |search_nail| %>
-	        <table>
+	        <table class="search_table">
+	         <% @search_nails.each do |search_nail| %>
 	        	<tr>
 	        		<thead>
 		        		<th>商品名</th>
@@ -22,11 +21,11 @@
 				        <td><%= attachment_image_tag search_nail,:image, :fill, 50, 50 ,format: "jpeg" %></td>
 	    	        </tbody>
 	    	    </tr>
+	         <% end %>
 	        </table>
-	        <% end %>
 	</div>
 
-	<div class="review">
+	<div class="reviews">
 		<div class="monthly">
 			<% render 'nail_comments/monthly_ranking', nail_ranking: @monthly_ranking %>
 		</div>
