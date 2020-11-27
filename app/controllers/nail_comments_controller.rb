@@ -5,7 +5,6 @@ class NailCommentsController < ApplicationController
 
   def create
     @nail_comment = NailComment.new(nail_comment_params)
-    @nail = Nail.find(params[:nail_id])
     @nail_comment.user_id = current_user.id
     @nail_comment.save!
     redirect_to nail_nail_comments_path

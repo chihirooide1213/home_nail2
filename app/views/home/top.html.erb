@@ -11,14 +11,18 @@
 	         <% @search_nails.each do |search_nail| %>
 	        	<tr>
 	        		<thead>
+	        			<tr>
 		        		<th>商品名</th>
 		        		<th>商品画像</th>
 		        		<th>商品価格</th>
+		        		</tr>
 	        	    </thead>
 	        		<tbody>
+	        			<tr>
 				        <td><%= search_nail.name %></td>
 				        <td><%= search_nail.price %></td>
 				        <td><%= attachment_image_tag search_nail,:image, :fill, 50, 50 ,format: "jpeg" %></td>
+				        </tr>
 	    	        </tbody>
 	    	    </tr>
 	         <% end %>

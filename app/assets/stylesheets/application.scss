@@ -22,7 +22,9 @@ body{
   	box-sizing: border-box;
 }
 
+.search{
+	width: 100%;
+}
 .search_table{
-	display: flex;
-	flex-wrap : wrap;
+	flex-basis: calc(100%/3);
 }
