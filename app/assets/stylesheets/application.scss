@@ -21,3 +21,10 @@ body{
 	background-size: cover;
   	box-sizing: border-box;
 }
+
+.search{
+	width: 100%;
+}
+.search_table{
+	flex-basis: calc(100%/3);
+}
